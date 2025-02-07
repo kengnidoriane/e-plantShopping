@@ -299,7 +299,6 @@ const handlePlantsClick = (e) => {
             ))
 
             }
-        
 
         </div>
  ) :  (
