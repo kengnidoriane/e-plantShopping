@@ -252,12 +252,14 @@ const handlePlantsClick = (e) => {
   };
 
   const handleAddToCart = (product) => {
+
     dispatch(addItem(product));
     setAddedToCart((prevState) => ({
         ...prevState,
     [product.name] : true,
     }))
   }
+
     return (
         <div>
              <div className="navbar" style={styleObj}>
@@ -289,7 +291,7 @@ const handlePlantsClick = (e) => {
                                 <img className='product-image' src={plant.image} alt={plant.name} />
                                 <p>{plant.cost}</p>
                                 <p>{plant.description}</p>
-                                <button className='product-button'>Add to cart</button>
+                                <button className='product-button' onClick={() => handleAddToCart(plant)}>Add to cart</button>
                             </div>
                         ))}
                     </div>
