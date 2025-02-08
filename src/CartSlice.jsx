@@ -26,9 +26,21 @@ export const CartSlice = createSlice({
         }
     
     },
+    incrementPlantQauntity: (state, action) => {
+      const { payload: index } =action;
+      if (state[index]) {
+        return state[index].quantity++;
+      }
+    },
+    decrementPlantQuantity: (state, action) => {
+      const {payload: index } = action;
+      if (state[index] && state[index].quantity > 0) {
+        return state[index].quantity--;
+      }
+    },
   },
 });
 
-export const { addItem, removeItem, updateQuantity } = CartSlice.actions;
+export const { addItem, removeItem, updateQuantity, incrementPlantQauntity, decrementPlantQuantity } = CartSlice.actions;
 
 export default CartSlice.reducer;
