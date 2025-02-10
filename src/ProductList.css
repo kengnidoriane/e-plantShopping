@@ -179,14 +179,12 @@ body {
     /* background-color: yellow; */
 }
 .plant_heading{
-    width: 400px;
     text-align: center;
-    margin: 20px;
+    margin: 20px auto;
     border: 1px solid rgb(5, 4, 4);
     border-left: none;
     border-right: none;
-
-    
+    width: 400px;
 }
 /* Add Media Query for responsiveness */
 @media (max-width: 768px) {
