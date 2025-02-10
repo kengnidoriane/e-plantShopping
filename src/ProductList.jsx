@@ -300,7 +300,7 @@ const handlePlantsClick = (e) => {
                                 <button className='product-button' 
                                         onClick={() => handleAddToCart(plant)} 
                                         style={{
-                                            backgroundColor: addedToCart[plant.name] ? '#4CAF50' : '#007BFF', // Changer la couleur de fond
+                                            backgroundColor: addedToCart[plant.name] ? '#798279' : '#4CAF50', // Changer la couleur de fond
                                             cursor: addedToCart[plant.name] ? 'not-allowed' : 'pointer', // Désactiver le curseur
                                         }}
                                         disabled={addedToCart[plant.name]}
@@ -324,12 +324,3 @@ const handlePlantsClick = (e) => {
 }
 
 export default ProductList;
-<button className='product-button'
-    onClick={() => handleAddToCart(plant)}
-    style={{
-            backgroundColor: addedToCart[plant.name] ? '#4CAF50' : '#007BFF', // Changer la couleur de fond
-            cursor: addedToCart[plant.name] ? 'not-allowed' : 'pointer', // Désactiver le curseur
-        }}
-    disabled={addedToCart[plant.name]} // Désactiver le bouton
->
-    {addedToCart[plant.name] ? 'Added to Cart' : 'Add to Cart'} // Changer le texte
