@@ -12,7 +12,7 @@ function ProductList() {
     const cart = useSelector(state => state.cart.items);
     const totalItemsInCart = cart.reduce((total, item) => total + item.quantity, 0);
     console.log('cart productlist: ', cart, totalItemsInCart);
-    
+
     const plantsArray = [
         {
             category: "Air Purifying Plants",
@@ -261,9 +261,21 @@ const handlePlantsClick = (e) => {
         ...prevState,
     [product.name] : true,
     }))
-    console.log('added cart',addedToCart);
-    
   }
+
+  useEffect(() => {
+    const updatedAddedToCart = {...addedToCart};
+    plantsArray.forEach(category => {
+       category.plants.forEach(plant => {
+        if (!cart.some(item => item.name === plant.name)) {
+            updatedAddedToCart[plant.name] = false;
+        }
+       });
+    });
+    setAddedToCart(updatedAddedToCart)
+}, [cart]);
+console.log('added cart',addedToCart);
+
 
     return (
         <div>
