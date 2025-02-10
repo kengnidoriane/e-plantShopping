@@ -186,6 +186,17 @@ body {
     border-right: none;
     width: 400px;
 }
+
+.plant-cost {
+    color: #c61530;
+    font-weight: bold;
+}
+
+.plant-description {
+    font-style: italic;
+    font-size: 15px;
+    font-weight: 500;
+}
 /* Add Media Query for responsiveness */
 @media (max-width: 768px) {
     .product-card {
